@@ -22,6 +22,28 @@ const renderStory = (item) => {
     if (!trimmed) {
       return;
     }
+    if (
+      item.inlineImage &&
+      trimmed.startsWith("дополнительный раздел") &&
+      !content.querySelector(".story-inline-image")
+    ) {
+      const figure = document.createElement("figure");
+      figure.className = "story-inline-image";
+
+      const link = document.createElement("a");
+      link.href = item.inlineImage.full || item.inlineImage.src;
+      link.target = "_blank";
+      link.rel = "noopener";
+
+      const img = document.createElement("img");
+      img.src = item.inlineImage.src;
+      img.alt = item.inlineImage.alt || "";
+      img.loading = "lazy";
+
+      link.appendChild(img);
+      figure.appendChild(link);
+      content.appendChild(figure);
+    }
     const paragraph = document.createElement("p");
     const sticker = document.createElement("span");
     sticker.className = "story-sticker";
