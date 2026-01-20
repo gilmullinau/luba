@@ -17,32 +17,37 @@ const renderStory = (item) => {
 
   const stickers = ["✨", "🌿", "💚", "🎉", "📌", "🌟", "📖", "🫶"];
 
+  let inlineInserted = false;
+  const insertInlineImage = () => {
+    if (!item.inlineImage || inlineInserted) {
+      return;
+    }
+    const figure = document.createElement("figure");
+    figure.className = "story-inline-image";
+
+    const link = document.createElement("a");
+    link.href = item.inlineImage.full || item.inlineImage.src;
+    link.target = "_blank";
+    link.rel = "noopener";
+
+    const img = document.createElement("img");
+    img.src = item.inlineImage.src;
+    img.alt = item.inlineImage.alt || "";
+    img.loading = "lazy";
+
+    link.appendChild(img);
+    figure.appendChild(link);
+    content.appendChild(figure);
+    inlineInserted = true;
+  };
+
   item.body.split("\\n").forEach((line, index) => {
     const trimmed = line.trim();
     if (!trimmed) {
       return;
     }
-    if (
-      item.inlineImage &&
-      trimmed.startsWith("дополнительный раздел") &&
-      !content.querySelector(".story-inline-image")
-    ) {
-      const figure = document.createElement("figure");
-      figure.className = "story-inline-image";
-
-      const link = document.createElement("a");
-      link.href = item.inlineImage.full || item.inlineImage.src;
-      link.target = "_blank";
-      link.rel = "noopener";
-
-      const img = document.createElement("img");
-      img.src = item.inlineImage.src;
-      img.alt = item.inlineImage.alt || "";
-      img.loading = "lazy";
-
-      link.appendChild(img);
-      figure.appendChild(link);
-      content.appendChild(figure);
+    if (trimmed.toLowerCase().startsWith("дополнительный раздел")) {
+      insertInlineImage();
     }
     const paragraph = document.createElement("p");
     const sticker = document.createElement("span");
@@ -58,6 +63,10 @@ const renderStory = (item) => {
     }
     content.appendChild(paragraph);
   });
+
+  if (item.inlineImage && !inlineInserted) {
+    insertInlineImage();
+  }
 
   const gallery = document.createElement("div");
   gallery.className = "story-gallery";
