@@ -74,7 +74,36 @@
     "title": "Переход в BI и начало большого проекта",
     "status": "ready",
     "link": "year.html?y=2008-2010-bi",
-    "body": "В КРОК появляется потребность в сводной управленческой отчётности для топ-менеджмента.\n\nТак рождается проект Корпоративная отчётность BI, куда Любу приглашают одной из первых.\n\nНа старте команда BI — всего три человека:\n\nдва разработчика и менеджер.\n\nПриходится совмещать роли аналитиков, тестировщиков и разработчиков.\n\nИменно тогда:\n\nзакладывается архитектура BI,\n\nформируются первые ночные обновления,\n\nначинается интеграция данных из ключевых систем компании.\n\nС этого момента BI становится основным проектом Любы — и остаётся им на многие годы."
+    "body": "В офисе встретили Новый год большой командой.\n\nВ КРОК появляется потребность в сводной управленческой отчётности для топ-менеджмента.\n\nТак рождается проект Корпоративная отчётность BI, куда Любу приглашают одной из первых.\n\nНа старте команда BI — всего три человека:\n\nдва разработчика и менеджер.\n\nПриходится совмещать роли аналитиков, тестировщиков и разработчиков.\n\nИменно тогда:\n\nзакладывается архитектура BI,\n\nформируются первые ночные обновления,\n\nначинается интеграция данных из ключевых систем компании.\n\nС этого момента BI становится основным проектом Любы — и остаётся им на многие годы.",
+    "imagesTop": [
+      {
+        "src": "https://drive.google.com/thumbnail?id=1aCfGu3gFJB3iMyMeaGn7Xdo4ckzClu-E&sz=w900",
+        "full": "https://drive.google.com/uc?export=download&id=1aCfGu3gFJB3iMyMeaGn7Xdo4ckzClu-E",
+        "alt": "Новый год в офисе — командное фото"
+      },
+      {
+        "src": "https://drive.google.com/thumbnail?id=1DHO1oxTy-OVTSGxeaFty6hzAyXbyKH4R&sz=w900",
+        "full": "https://drive.google.com/uc?export=download&id=1DHO1oxTy-OVTSGxeaFty6hzAyXbyKH4R",
+        "alt": "Новый год в офисе — праздничные моменты"
+      },
+      {
+        "src": "https://drive.google.com/thumbnail?id=1n6yr5dFizLr3la20zsPwBvY0y_4AbVnJ&sz=w900",
+        "full": "https://drive.google.com/uc?export=download&id=1n6yr5dFizLr3la20zsPwBvY0y_4AbVnJ",
+        "alt": "Новый год в офисе — атмосфера праздника"
+      }
+    ],
+    "imagesBottom": [
+      {
+        "src": "https://drive.google.com/thumbnail?id=1EC2akqUCFNlta-fy2rj6rSECoTeYF96X&sz=w900",
+        "full": "https://drive.google.com/uc?export=download&id=1EC2akqUCFNlta-fy2rj6rSECoTeYF96X",
+        "alt": "Весёлые будни в офисе"
+      },
+      {
+        "src": "https://drive.google.com/thumbnail?id=1ppkHReDJ-X5a1vrRfSM7MiR6ADrxRsBS&sz=w900",
+        "full": "https://drive.google.com/uc?export=download&id=1ppkHReDJ-X5a1vrRfSM7MiR6ADrxRsBS",
+        "alt": "Будни в офисе — тёплые моменты"
+      }
+    ]
   },
   {
     "id": "2009-2015-bi-growth",

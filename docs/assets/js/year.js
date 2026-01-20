@@ -68,14 +68,14 @@ const renderStory = (item) => {
     insertInlineImage();
   }
 
-  const gallery = document.createElement("div");
-  gallery.className = "story-gallery";
+  const buildGallery = (images) => {
+    const gallery = document.createElement("div");
+    gallery.className = "story-gallery";
 
-  if (Array.isArray(item.images) && item.images.length > 0) {
-    item.images.forEach((image, idx) => {
+    images.forEach((image, idx) => {
       const figure = document.createElement("figure");
       figure.className = "story-photo";
-      if (idx === 0) {
+      if (idx === 0 && images.length > 2) {
         figure.classList.add("story-photo--featured");
       }
 
@@ -93,13 +93,27 @@ const renderStory = (item) => {
       figure.appendChild(link);
       gallery.appendChild(figure);
     });
+
+    return gallery;
+  };
+
+  const elements = [title, subtitle];
+
+  if (Array.isArray(item.imagesTop) && item.imagesTop.length > 0) {
+    elements.push(buildGallery(item.imagesTop));
   }
 
-  if (gallery.childElementCount > 0) {
-    storyContainer.replaceChildren(title, subtitle, content, gallery);
-  } else {
-    storyContainer.replaceChildren(title, subtitle, content);
+  elements.push(content);
+
+  if (Array.isArray(item.images) && item.images.length > 0) {
+    elements.push(buildGallery(item.images));
   }
+
+  if (Array.isArray(item.imagesBottom) && item.imagesBottom.length > 0) {
+    elements.push(buildGallery(item.imagesBottom));
+  }
+
+  storyContainer.replaceChildren(...elements);
 };
 
 fetch("data/years.json")
