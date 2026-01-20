@@ -305,6 +305,25 @@ body {
   color: #d3dbd6;
 }
 
+.story-sticker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: rgba(48, 255, 138, 0.12);
+  box-shadow: 0 0 12px rgba(48, 255, 138, 0.25);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.story-content p {
+  display: flex;
+  align-items: flex-start;
+}
+
 .story-gallery {
   margin-top: 28px;
   display: grid;

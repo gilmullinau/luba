@@ -15,13 +15,22 @@ const renderStory = (item) => {
   const content = document.createElement("div");
   content.className = "story-content";
 
-  item.body.split("\\n").forEach((line, index, lines) => {
+  const stickers = ["✨", "🌿", "💚", "🎉", "📌", "🌟", "📖", "🫶"];
+
+  item.body.split("\\n").forEach((line, index) => {
     const trimmed = line.trim();
     if (!trimmed) {
       return;
     }
     const paragraph = document.createElement("p");
-    paragraph.textContent = trimmed;
+    const sticker = document.createElement("span");
+    sticker.className = "story-sticker";
+    sticker.textContent = stickers[index % stickers.length];
+
+    const text = document.createElement("span");
+    text.textContent = trimmed;
+
+    paragraph.append(sticker, text);
     if (trimmed.startsWith("Спасибо, Люба")) {
       paragraph.classList.add("story-signoff");
     }
