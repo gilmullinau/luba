@@ -28,7 +28,29 @@ const renderStory = (item) => {
     content.appendChild(paragraph);
   });
 
-  storyContainer.replaceChildren(title, subtitle, content);
+  const gallery = document.createElement("div");
+  gallery.className = "story-gallery";
+
+  if (Array.isArray(item.images) && item.images.length > 0) {
+    item.images.forEach((image) => {
+      const figure = document.createElement("figure");
+      figure.className = "story-photo";
+
+      const img = document.createElement("img");
+      img.src = image.src;
+      img.alt = image.alt || "";
+      img.loading = "lazy";
+
+      figure.appendChild(img);
+      gallery.appendChild(figure);
+    });
+  }
+
+  if (gallery.childElementCount > 0) {
+    storyContainer.replaceChildren(title, subtitle, content, gallery);
+  } else {
+    storyContainer.replaceChildren(title, subtitle, content);
+  }
 };
 
 fetch("data/years.json")
