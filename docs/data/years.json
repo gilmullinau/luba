@@ -1,0 +1,129 @@
+[
+  {
+    "year": 2006,
+    "title": "Alternative Reality: The Genesis of the Team (Symbolic Start)",
+    "status": "ready",
+    "isFeatured": true,
+    "link": "year.html?y=2006"
+  },
+  {
+    "year": 2007,
+    "title": "First Major Project: Foundations Laid",
+    "status": "in_progress",
+    "link": "year.html?y=2007"
+  },
+  {
+    "year": 2008,
+    "title": "Building the Core: Early Wins",
+    "status": "ready",
+    "link": "year.html?y=2008"
+  },
+  {
+    "year": 2009,
+    "title": "Scaling Up: New Clients Onboarded",
+    "status": "ready",
+    "link": "year.html?y=2009"
+  },
+  {
+    "year": 2010,
+    "title": "Innovation Sprint: Process Upgrades",
+    "status": "ready",
+    "link": "year.html?y=2010"
+  },
+  {
+    "year": 2011,
+    "title": "Community Impact: First Public Release",
+    "status": "ready",
+    "link": "year.html?y=2011"
+  },
+  {
+    "year": 2012,
+    "title": "Recognition Year: Awards & Highlights",
+    "status": "ready",
+    "link": "year.html?y=2012"
+  },
+  {
+    "year": 2013,
+    "title": "Product Expansion: New Horizons",
+    "status": "ready",
+    "link": "year.html?y=2013"
+  },
+  {
+    "year": 2014,
+    "title": "Partnership Era: Stronger Together",
+    "status": "ready",
+    "link": "year.html?y=2014"
+  },
+  {
+    "year": 2015,
+    "title": "Culture Shift: Values in Motion",
+    "status": "ready",
+    "link": "year.html?y=2015"
+  },
+  {
+    "year": 2016,
+    "title": "Talent Acceleration: Team Growth",
+    "status": "ready",
+    "link": "year.html?y=2016"
+  },
+  {
+    "year": 2017,
+    "title": "Momentum Year: Major Milestone",
+    "status": "ready",
+    "link": "year.html?y=2017"
+  },
+  {
+    "year": 2018,
+    "title": "New Markets: Strategic Launches",
+    "status": "ready",
+    "link": "year.html?y=2018"
+  },
+  {
+    "year": 2019,
+    "title": "Efficiency Drive: Smart Automation",
+    "status": "ready",
+    "link": "year.html?y=2019"
+  },
+  {
+    "year": 2020,
+    "title": "Resilience Year: Remote & United",
+    "status": "ready",
+    "link": "year.html?y=2020"
+  },
+  {
+    "year": 2021,
+    "title": "Digital Leap: Customer Experience",
+    "status": "ready",
+    "link": "year.html?y=2021"
+  },
+  {
+    "year": 2022,
+    "title": "Next Chapter: Sustainability Focus",
+    "status": "ready",
+    "link": "year.html?y=2022"
+  },
+  {
+    "year": 2023,
+    "title": "Future Labs: Explorations",
+    "status": "in_progress",
+    "link": "year.html?y=2023"
+  },
+  {
+    "year": 2024,
+    "title": "Modernization Wave: Systems Refresh",
+    "status": "in_progress",
+    "link": "year.html?y=2024"
+  },
+  {
+    "year": 2025,
+    "title": "Road to 20: Celebration Prep",
+    "status": "in_progress",
+    "link": "year.html?y=2025"
+  },
+  {
+    "year": 2026,
+    "title": "Upcoming milestone",
+    "status": "upcoming",
+    "link": "year.html?y=2026"
+  }
+]
