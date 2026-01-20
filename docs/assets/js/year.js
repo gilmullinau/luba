@@ -41,7 +41,7 @@ const renderStory = (item) => {
     inlineInserted = true;
   };
 
-  item.body.split("\\n").forEach((line, index) => {
+  item.body.split("\n").forEach((line, index) => {
     const trimmed = line.trim();
     if (!trimmed) {
       return;
