@@ -15,13 +15,16 @@ const renderStory = (item) => {
   const content = document.createElement("div");
   content.className = "story-content";
 
-  item.body.split("\\n").forEach((line) => {
+  item.body.split("\\n").forEach((line, index, lines) => {
     const trimmed = line.trim();
     if (!trimmed) {
       return;
     }
     const paragraph = document.createElement("p");
     paragraph.textContent = trimmed;
+    if (trimmed.startsWith("Спасибо, Люба")) {
+      paragraph.classList.add("story-signoff");
+    }
     content.appendChild(paragraph);
   });
 

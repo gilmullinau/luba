@@ -1,12 +1,6 @@
 const timelineContainer = document.querySelector("#timeline-items");
 let timelineData = [];
 
-const statusLabels = {
-  ready: "ready",
-  in_progress: "in progress",
-  upcoming: "upcoming",
-};
-
 const createTimelineCard = (item, index) => {
   const wrapper = document.createElement("article");
   const alignment = item.featured ? "featured" : index % 2 === 0 ? "left" : "right";
@@ -19,22 +13,14 @@ const createTimelineCard = (item, index) => {
     card.classList.add("featured");
   }
 
-  if (item.status === "upcoming") {
-    card.classList.add("muted");
-  }
-
   const header = document.createElement("div");
   header.className = "card-header";
-
-  const status = document.createElement("span");
-  status.className = `status ${item.status}`;
-  status.textContent = statusLabels[item.status] ?? item.status;
 
   const year = document.createElement("h2");
   year.className = "card-year";
   year.textContent = item.year;
 
-  header.append(year, status);
+  header.append(year);
 
   const title = document.createElement("p");
   title.className = "card-title";
