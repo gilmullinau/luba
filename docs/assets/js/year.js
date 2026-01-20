@@ -32,16 +32,25 @@ const renderStory = (item) => {
   gallery.className = "story-gallery";
 
   if (Array.isArray(item.images) && item.images.length > 0) {
-    item.images.forEach((image) => {
+    item.images.forEach((image, idx) => {
       const figure = document.createElement("figure");
       figure.className = "story-photo";
+      if (idx === 0) {
+        figure.classList.add("story-photo--featured");
+      }
+
+      const link = document.createElement("a");
+      link.href = image.full || image.src;
+      link.target = "_blank";
+      link.rel = "noopener";
 
       const img = document.createElement("img");
       img.src = image.src;
       img.alt = image.alt || "";
       img.loading = "lazy";
 
-      figure.appendChild(img);
+      link.appendChild(img);
+      figure.appendChild(link);
       gallery.appendChild(figure);
     });
   }
