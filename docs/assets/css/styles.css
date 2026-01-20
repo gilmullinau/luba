@@ -306,6 +306,36 @@ body {
   box-shadow: var(--shadow);
 }
 
+.story {
+  max-width: 820px;
+  margin: 40px auto 80px;
+  padding: 32px;
+  background: var(--panel);
+  border-radius: var(--radius);
+  border: 1px solid rgba(48, 255, 138, 0.22);
+  box-shadow: var(--shadow);
+}
+
+.story h2 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  text-shadow: 0 0 18px rgba(48, 255, 138, 0.4);
+}
+
+.story h3 {
+  margin: 0 0 20px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.story-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  line-height: 1.6;
+  color: #d3dbd6;
+}
+
 .back-link {
   color: var(--line);
   text-decoration: none;
