@@ -48,6 +48,7 @@ const renderStory = (item) => {
     }
     if (trimmed.toLowerCase().startsWith("дополнительный раздел")) {
       insertInlineImage();
+      return;
     }
     const paragraph = document.createElement("p");
     const sticker = document.createElement("span");
@@ -68,9 +69,11 @@ const renderStory = (item) => {
     insertInlineImage();
   }
 
-  const buildGallery = (images) => {
+  const buildGallery = (images, className = "") => {
     const gallery = document.createElement("div");
-    gallery.className = "story-gallery";
+    gallery.className = className
+      ? `story-gallery ${className}`
+      : "story-gallery";
 
     images.forEach((image, idx) => {
       const figure = document.createElement("figure");
@@ -104,6 +107,10 @@ const renderStory = (item) => {
   }
 
   elements.push(content);
+
+  if (Array.isArray(item.imagesLarge) && item.imagesLarge.length > 0) {
+    elements.push(buildGallery(item.imagesLarge, "story-gallery--large"));
+  }
 
   if (Array.isArray(item.images) && item.images.length > 0) {
     elements.push(buildGallery(item.images));
