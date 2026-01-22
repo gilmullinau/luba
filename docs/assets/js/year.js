@@ -111,6 +111,9 @@ const renderStory = (item, nextItem) => {
       const img = document.createElement("img");
       setImageSource(img, image);
       img.alt = image.alt || "";
+      if (image.fit) {
+        img.style.objectFit = image.fit;
+      }
       img.loading = "lazy";
 
       link.appendChild(img);
