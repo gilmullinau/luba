@@ -40,11 +40,11 @@
         "alt": "Команда в 2006 году — фото 5"
       },
       {
-        "src": "data/1.jpg",
-        "full": "data/1.jpg",
+        "src": "data/2006-collage.jpg",
+        "full": "data/2006-collage.jpg",
         "fallbacks": [
-          "/data/1.jpg",
-          "/docs/data/1.jpg"
+          "/data/2006-collage.jpg",
+          "/docs/data/2006-collage.jpg"
         ],
         "alt": "Команда в 2006 году — коллаж"
       }
