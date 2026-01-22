@@ -19,14 +19,21 @@ const renderStory = (item, nextItem) => {
 
   const setImageSource = (img, image) => {
     const fallbacks = Array.isArray(image.fallbacks) ? [...image.fallbacks] : [];
+    const tryNextSource = () => {
+      const nextSource = fallbacks.shift();
+      if (nextSource) {
+        img.src = nextSource;
+      }
+    };
+
     img.src = image.src;
     if (fallbacks.length === 0) {
       return;
     }
-    img.addEventListener("error", () => {
-      const nextSource = fallbacks.shift();
-      if (nextSource) {
-        img.src = nextSource;
+    img.addEventListener("error", tryNextSource);
+    img.addEventListener("load", () => {
+      if (img.naturalWidth === 0) {
+        tryNextSource();
       }
     });
   };
@@ -45,6 +52,7 @@ const renderStory = (item, nextItem) => {
     link.rel = "noopener";
 
     const img = document.createElement("img");
+    img.referrerPolicy = "no-referrer";
     setImageSource(img, item.inlineImage);
     img.alt = item.inlineImage.alt || "";
     img.loading = "lazy";
@@ -102,6 +110,7 @@ const renderStory = (item, nextItem) => {
       link.rel = "noopener";
 
       const img = document.createElement("img");
+      img.referrerPolicy = "no-referrer";
       setImageSource(img, image);
       img.alt = image.alt || "";
       img.loading = "lazy";
