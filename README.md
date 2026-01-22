@@ -1,4 +1,4 @@
-# KROK Timeline
+# CROC Timeline
 
 Static timeline site for GitHub Pages.
 
