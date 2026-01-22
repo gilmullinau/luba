@@ -42,6 +42,10 @@
       {
         "src": "data/1.jpg",
         "full": "data/1.jpg",
+        "fallbacks": [
+          "/data/1.jpg",
+          "/docs/data/1.jpg"
+        ],
         "alt": "Команда в 2006 году — коллаж"
       }
     ]
