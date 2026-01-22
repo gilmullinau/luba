@@ -40,12 +40,8 @@
         "alt": "Команда в 2006 году — фото 5"
       },
       {
-        "src": "https://drive.google.com/thumbnail?id=1s3KUuU4gU0SAFPMGzPsUndXbtjqCES37&sz=w1600",
-        "full": "https://drive.google.com/file/d/1s3KUuU4gU0SAFPMGzPsUndXbtjqCES37/view?usp=share_link",
-        "fallbacks": [
-          "https://drive.google.com/thumbnail?id=1s3KUuU4gU0SAFPMGzPsUndXbtjqCES37&sz=w1200",
-          "https://lh3.googleusercontent.com/d/1s3KUuU4gU0SAFPMGzPsUndXbtjqCES37=w1600"
-        ],
+        "src": "https://drive.google.com/thumbnail?id=1s3KUuU4gU0SAFPMGzPsUndXbtjqCES37&sz=w1200",
+        "full": "https://drive.google.com/file/d/1s3KUuU4gU0SAFPMGzPsUndXbtjqCES37/view?usp=sharing",
         "alt": "Команда в 2006 году — коллаж"
       }
     ]
