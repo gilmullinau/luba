@@ -17,6 +17,20 @@ const renderStory = (item, nextItem) => {
 
   const stickers = ["✨", "🌿", "💚", "🎉", "📌", "🌟", "📖", "🫶"];
 
+  const setImageSource = (img, image) => {
+    const fallbacks = Array.isArray(image.fallbacks) ? [...image.fallbacks] : [];
+    img.src = image.src;
+    if (fallbacks.length === 0) {
+      return;
+    }
+    img.addEventListener("error", () => {
+      const nextSource = fallbacks.shift();
+      if (nextSource) {
+        img.src = nextSource;
+      }
+    });
+  };
+
   let inlineInserted = false;
   const insertInlineImage = () => {
     if (!item.inlineImage || inlineInserted) {
@@ -31,7 +45,7 @@ const renderStory = (item, nextItem) => {
     link.rel = "noopener";
 
     const img = document.createElement("img");
-    img.src = item.inlineImage.src;
+    setImageSource(img, item.inlineImage);
     img.alt = item.inlineImage.alt || "";
     img.loading = "lazy";
 
@@ -88,7 +102,7 @@ const renderStory = (item, nextItem) => {
       link.rel = "noopener";
 
       const img = document.createElement("img");
-      img.src = image.src;
+      setImageSource(img, image);
       img.alt = image.alt || "";
       img.loading = "lazy";
 
