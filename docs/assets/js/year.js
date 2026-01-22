@@ -18,7 +18,11 @@ const renderStory = (item, nextItem) => {
   const stickers = ["✨", "🌿", "💚", "🎉", "📌", "🌟", "📖", "🫶"];
 
   const setImageSource = (img, image) => {
-    const fallbacks = Array.isArray(image.fallbacks) ? [...image.fallbacks] : [];
+    const normalizeSource = (source) =>
+      typeof source === "string" ? encodeURI(source) : source;
+    const fallbacks = Array.isArray(image.fallbacks)
+      ? image.fallbacks.map(normalizeSource)
+      : [];
     const tryNextSource = () => {
       const nextSource = fallbacks.shift();
       if (nextSource) {
@@ -26,7 +30,7 @@ const renderStory = (item, nextItem) => {
       }
     };
 
-    img.src = image.src;
+    img.src = normalizeSource(image.src);
     if (fallbacks.length === 0) {
       return;
     }
