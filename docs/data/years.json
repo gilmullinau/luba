@@ -37,7 +37,8 @@
       {
         "src": "data/2006-collage.jpg",
         "full": "data/2006-collage.jpg",
-        "alt": "Команда в 2006 году — фото из папки data"
+        "alt": "Команда в 2006 году — фото из папки data",
+        "fit": "contain"
       }
     ]
   },
