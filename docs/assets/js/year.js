@@ -52,7 +52,6 @@ const renderStory = (item, nextItem) => {
     link.rel = "noopener";
 
     const img = document.createElement("img");
-    img.referrerPolicy = "no-referrer";
     setImageSource(img, item.inlineImage);
     img.alt = item.inlineImage.alt || "";
     img.loading = "lazy";
@@ -110,7 +109,6 @@ const renderStory = (item, nextItem) => {
       link.rel = "noopener";
 
       const img = document.createElement("img");
-      img.referrerPolicy = "no-referrer";
       setImageSource(img, image);
       img.alt = image.alt || "";
       img.loading = "lazy";
