@@ -39,15 +39,7 @@
         "full": "https://drive.google.com/uc?export=download&id=1NR31tVfrsLs7jgBUzSbRM7Eiw9pV7Tpf",
         "alt": "Команда в 2006 году — фото 5"
       },
-      {
-        "src": "data/2006-collage.jpg",
-        "full": "data/2006-collage.jpg",
-        "fallbacks": [
-          "/data/2006-collage.jpg",
-          "/docs/data/2006-collage.jpg"
-        ],
-        "alt": "Команда в 2006 году — коллаж"
-      }
+      
     ]
   },
   {
