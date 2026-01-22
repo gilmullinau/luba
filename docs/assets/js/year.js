@@ -5,7 +5,7 @@ const getStoryId = () => {
   return params.get("y");
 };
 
-const renderStory = (item) => {
+const renderStory = (item, nextItem) => {
   const title = document.createElement("h2");
   title.textContent = item.year;
 
@@ -16,6 +16,27 @@ const renderStory = (item) => {
   content.className = "story-content";
 
   const stickers = ["✨", "🌿", "💚", "🎉", "📌", "🌟", "📖", "🫶"];
+
+  const setImageSource = (img, image) => {
+    const fallbacks = Array.isArray(image.fallbacks) ? [...image.fallbacks] : [];
+    const tryNextSource = () => {
+      const nextSource = fallbacks.shift();
+      if (nextSource) {
+        img.src = nextSource;
+      }
+    };
+
+    img.src = image.src;
+    if (fallbacks.length === 0) {
+      return;
+    }
+    img.addEventListener("error", tryNextSource);
+    img.addEventListener("load", () => {
+      if (img.naturalWidth === 0) {
+        tryNextSource();
+      }
+    });
+  };
 
   let inlineInserted = false;
   const insertInlineImage = () => {
@@ -31,7 +52,7 @@ const renderStory = (item) => {
     link.rel = "noopener";
 
     const img = document.createElement("img");
-    img.src = item.inlineImage.src;
+    setImageSource(img, item.inlineImage);
     img.alt = item.inlineImage.alt || "";
     img.loading = "lazy";
 
@@ -88,7 +109,7 @@ const renderStory = (item) => {
       link.rel = "noopener";
 
       const img = document.createElement("img");
-      img.src = image.src;
+      setImageSource(img, image);
       img.alt = image.alt || "";
       img.loading = "lazy";
 
@@ -120,6 +141,24 @@ const renderStory = (item) => {
     elements.push(buildGallery(item.imagesBottom));
   }
 
+  if (nextItem && nextItem.link) {
+    const nextWrap = document.createElement("div");
+    nextWrap.className = "story-next";
+
+    const nextLink = document.createElement("a");
+    nextLink.href = nextItem.link;
+    nextLink.className = "story-next__button";
+    nextLink.textContent = `Следующий период: ${nextItem.year}`;
+
+    const nextTitle = document.createElement("span");
+    nextTitle.className = "story-next__title";
+    nextTitle.textContent = nextItem.title || "";
+
+    nextLink.appendChild(nextTitle);
+    nextWrap.appendChild(nextLink);
+    elements.push(nextWrap);
+  }
+
   storyContainer.replaceChildren(...elements);
 };
 
@@ -127,14 +166,16 @@ fetch("data/years.json")
   .then((response) => response.json())
   .then((data) => {
     const storyId = getStoryId();
-    const item = data.find((entry) => entry.id === storyId);
+    const itemIndex = data.findIndex((entry) => entry.id === storyId);
+    const item = itemIndex >= 0 ? data[itemIndex] : null;
 
     if (!item) {
       storyContainer.textContent = "Story not found.";
       return;
     }
 
-    renderStory(item);
+    const nextItem = data[itemIndex + 1];
+    renderStory(item, nextItem);
   })
   .catch(() => {
     storyContainer.textContent = "Unable to load story content.";
